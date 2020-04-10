@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAKA,AAAA,IAAI,CAAC;EACH,WAAW,EANJ,QAAQ;EAOf,SAAS,EALE,IAAI;EAMf,KAAK,EAPG,KAAK;CAQd;;AAED,AAAA,UAAU,CAAC;EACT,KAAK,EATG,KAAK;CAUd",
+    "sources": [
+        "Warfare_Project.scss"
+    ],
+    "names": [],
+    "file": "Warfare_Project.css"
+}
