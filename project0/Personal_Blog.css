@@ -7,4 +7,24 @@ body {
 #container {
   width: 680px;
 }
+
+div p {
+  color: black;
+  font-style: italic;
+}
+
+div table, div th, div td {
+  border: 1px solid #052e49;
+  padding: 0px;
+}
+
+h1 {
+  color: #030330;
+  font-weight: bold;
+  text-align: left;
+}
+
+h2 {
+  color: #550606;
+}
 /*# sourceMappingURL=Personal_Blog.css.map */

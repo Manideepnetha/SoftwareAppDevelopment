@@ -12,3 +12,26 @@ body {
 #container {
   width: $myWidth;
 }
+
+// Scss - Nesting 
+div {
+      p{
+          color:black;
+          font-style:italic;
+          
+      }
+      table, th, td {
+        border: 1px solid rgb(5, 46, 73);
+        padding: 0px;
+      }
+}
+// Scss - Inheritance
+h1{
+    color:rgb(3, 3, 48) ;
+    font-weight:bold;
+    text-align:left;
+}
+h2{
+    color:rgb(85, 6, 6);
+
+}
