@@ -34,6 +34,6 @@ def register():
         # username=request.form.get('username')
         name = request.form.get('name')
         print(name) 
-        return render_template('Register.html',name=name)
+        return render_template('login.html',name=name)
     else:
         return render_template("Register.html")
