@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/styles/Register.css">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+<body>
+
+<form action="{{url_for('register')}}" method="POST">
+  <div class="container">
+    <h1 style = color:white> Register</h1>
+    <p style = color:white>Please fill in this form to create an account.</p>
+    {% if name %}
+      <h2 style=color:white >Hello {{name}}, please login </h2>
+    {% endif %}
+    <hr>
+
+    <label style = color:white for="email"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="name" requiwhite>
+
+    <label style = color:white for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" requiwhite>
+
+    <label style = color:white for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" requiwhite>
+    <hr>
+    <p style = color:white > By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+
+  <div class="container signin">
+    <p>Already have an account? <a href="#">Sign in</a>.</p>
+  </div>
+</form>
+
+</body>
+</html>
