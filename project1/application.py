@@ -101,6 +101,9 @@ def logout():
     if request.method == "POST":
         session["email"] = None
         return redirect(url_for("/"))
+    else:
+        session.clear()
+        return render_template("Register.html")
 
 if __name__ == "__main__":
     with app.app_context():
