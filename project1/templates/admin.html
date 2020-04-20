@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<style>
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  text-align:center;
+}
+    td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  color: white;
+  background: rgb(48, 4, 4);
+}
+
+</style>
+        <body>
+
+            <h2 style=text-align:center> USERS TABLE </h2>
+
+            <table>
+                <th>{{"Email ID"}}</th>
+                <th>{{"password"}}</th>
+                <th>{{"Timestamp"}}</th>
+                {% for item in data %}
+                 <tr>
+                     <td> {{item.email}}</td>
+                     <td> {{item.password}}</td>
+                     <td> {{item.timestamp}}</td>
+                    </tr>
+              </tr> 
+              {% endfor %} 
+              </table>
+        </body>
+    </head>
+</html>
