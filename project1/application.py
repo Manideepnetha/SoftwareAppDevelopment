@@ -42,6 +42,11 @@ engine = create_engine(os.getenv("DATABASE_URL"))
 
 @app.route("/", methods = ["GET","POST"])
 def register():
+    if request.method == "GET":
+        if session.get("email") is not None:
+            return render_template("UserPage.html",text= session['email'])
+        return redirect(url_for("Register"))
+
     db.create_all()
     if request.method == 'POST':
         data = request.form
