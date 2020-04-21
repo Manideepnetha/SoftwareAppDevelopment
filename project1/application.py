@@ -45,18 +45,21 @@ def register():
     if request.method == "GET":
         if session.get("email") is not None:
             return render_template("UserPage.html",text= session['email'])
-        return redirect(url_for("Register"))
+        return render_template("Register.html")
 
     db.create_all()
     if request.method == 'POST':
         data = request.form
         userdata = UserForm(request.form['name'],request.form['psw'])
         user = UserForm.query.filter_by(email=request.form['name']).first()
+        name = request.form.get('name')
+        return render_template("login.html", name=name)
 
         if user is not None:
+            
             print("User is already existing. Please try to register with a new")
             # var1 = "Error: User is already existing. Please try to register with a new one"
-            return render_template("Register.html")
+            return render_template("login.html")
         db.session.add(userdata)
         db.session.commit()
         # print("Registration Success")
