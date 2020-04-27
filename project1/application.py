@@ -11,6 +11,7 @@ from sqlalchemy import create_engine, desc
 from sqlalchemy.orm import scoped_session, sessionmaker
 import sys, os, time, calendar;
 from models import *
+from Rating import *
 
 app = Flask(__name__)
 
@@ -112,6 +113,19 @@ def logout():
     else:
         session.clear()
         return render_template("Register.html")
+
+@app.route('/review',methods=['POST','GET'])
+def rev():
+    db.create_all()
+    if request.method=='POST':
+        info=Star(request.form['UserName'],request.form['Book_ID'],request.form['Rating'],request.form['Feedback'])
+        Rdata=Star.query.all()
+        db.session.add(info)
+        db.session.commit()
+        r=Star.query.filter_by(Book_ID=request.form['Book_ID']).all()
+        return render_template("Rating.html",comments=r, message="Thank you for the Reviewing!!")
+    else :              
+        return render_template("Rating.html")
 
 if __name__ == "__main__":
     with app.app_context():
